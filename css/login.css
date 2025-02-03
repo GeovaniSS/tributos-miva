@@ -1,0 +1,188 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: url("../img/fundo-login.jpeg");
+  background-size: cover;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #c1d5f7;
+  border: 2px solid var(--blue-color);
+  border-radius: 20px;
+  padding: 1rem 2rem;
+}
+
+.login-container form {
+  width: 100%;
+}
+
+.login-circle {
+  position: relative;
+  margin-top: -5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7.5rem;
+  height: 7.5rem;
+  border: 2px solid var(--blue-color);
+  border-radius: 50%;
+  background-color: var(--dark-blue-color);
+  margin-bottom: 2rem;
+}
+
+.login-circle img {
+  width: 60px;
+}
+
+.input-container {
+  width: 100%;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.input-container .input {
+  width: 100%;
+  background-color: #6993db;
+  color: var(--white-color);
+  padding-left: 1rem;
+  font-size: 1.25rem;
+  border-radius: 0px;
+}
+
+.input-container .input::placeholder {
+  padding-top: 2px;
+  color: var(--white-color);
+}
+
+.input-container input#senha {
+  height: 100%;
+}
+
+.label-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 3rem;
+  height: 3rem;
+  background-color: var(--dark-blue-color);
+}
+
+.label-icon img {
+  width: 1rem;
+}
+
+.opcoes-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0 2rem;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container input {
+  margin-right: 0.5rem;
+}
+
+.css-checkbox {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.css-checkbox + label {
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  height: 27px;
+  font-size: 0.75rem;
+  font-style: italic;
+  font-weight: normal;
+  color: var(--dark-blue-color);
+}
+
+.css-checkbox + label::before {
+  content: " ";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 4px;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--blue-color);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--blue-color);
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+.css-checkbox:checked + label::after {
+  content: " ";
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMzMzMjMwIiBkPSJNMTczLjg5OCA0MzkuNDA0bC0xNjYuNC0xNjYuNGMtOS45OTctOS45OTctOS45OTctMjYuMjA2IDAtMzYuMjA0bDM2LjIwMy0zNi4yMDRjOS45OTctOS45OTggMjYuMjA3LTkuOTk4IDM2LjIwNCAwTDE5MiAzMTIuNjkgNDMyLjA5NSA3Mi41OTZjOS45OTctOS45OTcgMjYuMjA3LTkuOTk3IDM2LjIwNCAwbDM2LjIwMyAzNi4yMDRjOS45OTcgOS45OTcgOS45OTcgMjYuMjA2IDAgMzYuMjA0bC0yOTQuNCAyOTQuNDAxYy05Ljk5OCA5Ljk5Ny0yNi4yMDcgOS45OTctMzYuMjA0LS4wMDF6Ii8+PC9zdmc+");
+  background-repeat: no-repeat;
+  background-size: 15px 15px;
+  background-position: center center;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0px;
+  top: 5px;
+  left: 1px;
+  text-align: center;
+  background-color: transparent;
+  font-size: 10px;
+  height: 16px;
+  width: 16px;
+}
+
+a.esqueceu-senha {
+  font-size: 0.75rem;
+  font-style: italic;
+  text-decoration: none;
+  color: var(--dark-blue-color);
+}
+
+.btn-login {
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  border: none;
+  padding: 1rem;
+  color: var(--blue-color);
+  background-color: var(--dark-blue-color);
+  border-radius: 2px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.btn-login:hover {
+  background-color: var(--blue-color);
+  color: var(--dark-blue-color);
+}
+
+@media (max-width: 500px) {
+  .login-container {
+    max-width: 22.5rem;
+  }
+}

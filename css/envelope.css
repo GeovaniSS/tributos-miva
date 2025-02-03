@@ -1,0 +1,490 @@
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  -webkit-align-items: flex-start;
+  justify-content: center;
+}
+
+.container-externo {
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--blue-color);
+  border-radius: 20px;
+  padding: 0.25rem;
+}
+
+.container-interno {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--blue-color);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+}
+
+.container-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  display: block;
+  width: 100%;
+  max-width: 35rem;
+}
+
+.container-data-remuneracao,
+.container-data-remuneracao.mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container-data-remuneracao.mobile {
+  display: none;
+}
+
+.container-data-remuneracao .container-data {
+  margin-bottom: 8px;
+}
+
+.container-data-remuneracao.mobile .container-data {
+  margin-right: 8px;
+}
+
+.container-data-remuneracao label {
+  color: var(--dark-blue-color);
+  font-weight: 700;
+}
+
+.container-data,
+.container-remuneracao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-data input {
+  width: 100%;
+  max-width: 138px;
+  text-align: center;
+  padding: 2px 8px;
+}
+
+.input-eye-wrapper .input-remuneracao {
+  width: 100%;
+  max-width: 138px;
+  height: 34px;
+  background: transparent;
+  border: 2px solid var(--blue-color);
+  border-radius: 12px;
+}
+
+.container-dados {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+
+.input-azul-escuro {
+  padding: 2px 8px;
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  border-radius: 9999px;
+}
+
+.input-azul-escuro::placeholder {
+  color: var(--white-color);
+  opacity: 0.9;
+}
+
+.input-azul-transparente {
+  background: transparent;
+  border: 1px solid var(--blue-color);
+  border-radius: 5px;
+}
+
+.container-dados label {
+  font-size: 0.875rem;
+}
+
+.container-dados input {
+  width: 100%;
+}
+
+.container-nome,
+.container-tel,
+.container-motivo-oracao {
+  display: flex;
+  align-items: center;
+}
+
+.container-nome,
+.container-tel {
+  margin-bottom: 8px;
+}
+
+.container-nome label,
+.container-tel label,
+.container-motivo-oracao label {
+  margin-right: 4px;
+}
+
+.container-tributos {
+  display: flex;
+  flex-direction: column;
+}
+
+.caixa-tributos {
+  -webkit-display: flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--blue-color);
+}
+
+.caixa-tributos .title {
+  color: var(--dark-blue-color);
+  font-size: 1rem;
+  margin-bottom: 2px;
+}
+
+.caixa-tributos div,
+small {
+  color: var(--blue-color);
+  font-size: 9px;
+  font-weight: normal;
+  line-height: 1;
+}
+
+.caixa-tributos span {
+  color: var(--black-color);
+}
+
+.container-input-tributos {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
+}
+
+.container-input-tributos input {
+  width: 100%;
+  height: 100%;
+  max-width: 138px;
+  background: transparent;
+  border: 1px solid var(--blue-color);
+  border-radius: 5px;
+}
+
+.container-input-tributos input.icon,
+.container-total input.icon {
+  background-image: url("../img/icons/real.png");
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  background-position: -2px -2px;
+  padding-left: 1rem;
+}
+
+.container-total input.icon {
+  padding-left: 0px;
+}
+
+.container-footer,
+.container-footer.mobile {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container-footer.mobile,
+.container-footer.printer {
+  display: none;
+}
+
+.container-acoes,
+.acoes,
+.container-total {
+  display: flex;
+  flex: 0 1 auto;
+}
+
+.container-acoes {
+  flex-direction: column;
+}
+
+.cnpj-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cnpj-container p {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--dark-blue-color);
+  margin-right: 4px;
+}
+
+.botao-copiar {
+  background: transparent;
+  cursor: pointer;
+}
+
+.botao-imprimir {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  color: var(--dark-blue-color);
+  border: 0;
+  padding: 1rem 1rem 0.5rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.botao-imprimir:focus {
+  outline: none;
+}
+
+.botao-imprimir img {
+  margin-bottom: 4px;
+}
+
+.pix {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1rem 0.5rem;
+}
+
+.botao-imprimir img,
+.pix img {
+  max-width: 3.5rem;
+}
+
+.logo-baixo {
+  flex: 1;
+  max-width: 12rem;
+}
+
+.container-total {
+  align-self: flex-start;
+  -webkit-align-self: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-total label {
+  color: var(--dark-blue-color);
+  text-align: center;
+  font-weight: 700;
+}
+
+.container-total input {
+  width: 100%;
+  max-width: 138px;
+  height: 34px;
+  border: 2px solid var(--blue-color);
+  border-radius: 5px;
+  text-align: center;
+  padding: 0px;
+}
+
+input#data-mobile,
+input#remuneracao-mobile,
+input#total-contribuicao-mobile {
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  .container-externo {
+    max-width: 800px;
+    margin-top: 2.5rem;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  input#data,
+  input#remuneracao,
+  input#total-contribuicao {
+    display: none;
+  }
+
+  input#data-mobile,
+  input#remuneracao-mobile,
+  input#total-contribuicao-mobile {
+    display: block;
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .container-header {
+    justify-content: center;
+  }
+
+  /* .logo {
+    max-width: 20rem;
+  } */
+
+  .container-data-remuneracao.mobile {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .container-data,
+  .container-remuneracao {
+    flex: 1;
+  }
+
+  .container-data input,
+  .input-eye-wrapper .input-remuneracao {
+    max-width: none;
+  }
+
+  .caixa-tributos .title small {
+    display: none;
+  }
+
+  .container-data-remuneracao,
+  .container-footer {
+    display: none;
+  }
+
+  .container-data-remuneracao.mobile,
+  .container-footer.mobile {
+    display: flex;
+  }
+
+  .container-dados input,
+  .container-data input {
+    padding: 6px 8px;
+  }
+
+  .container-remuneracao .input-remuneracao {
+    height: 100%;
+    padding: 4px 8px;
+  }
+
+  .container-footer.mobile {
+    align-items: center;
+  }
+
+  .container-input-tributos input,
+  .container-total input {
+    max-width: 5rem;
+  }
+
+  .logo-footer {
+    max-width: 12rem;
+  }
+
+  .botao-imprimir,
+  .pix {
+    padding: 0.5rem;
+  }
+
+  .container-acoes,
+  .container-total {
+    align-items: flex-end;
+    -webkit-align-items: flex-end;
+  }
+
+  .container-total input.icon {
+    padding-left: 1rem;
+  }
+
+  .acoes {
+    flex-direction: column-reverse;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .container-total label {
+    text-align: right;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+  }
+
+  input {
+    font-size: 0.875rem;
+  }
+
+  .container {
+    width: 80%;
+    height: 100%;
+  }
+
+  .container-interno {
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(255, 255, 255, 0.8) 100%
+      ),
+      url("../img/logoMiva.png") no-repeat center / 95% 50%;
+  }
+
+  .container-header {
+    align-items: flex-start;
+    -webkit-align-items: flex-start;
+  }
+
+  .logo {
+    max-width: 23rem;
+  }
+
+  .container-remuneracao {
+    display: none;
+  }
+
+  .container-dados {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .container-nome,
+  .container-tel,
+  .container-motivo-oracao {
+    flex-grow: 1;
+  }
+
+  .container-dados label {
+    font-size: 0.75rem;
+  }
+
+  .container-dados input {
+    background-color: transparent;
+    color: #000;
+    border-radius: 0px;
+    border: none;
+    border-bottom: 1px solid var(--blue-color);
+    padding: 0px;
+  }
+
+  .caixa-tributos {
+    margin-bottom: 0.25rem;
+  }
+
+  .caixa-tributos .title {
+    font-size: 0.875rem;
+  }
+
+  .container-footer {
+    display: none;
+  }
+}
