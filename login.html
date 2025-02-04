@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/styles.css">
+	<link rel="stylesheet" href="./css/login.css">
+	<script src="./js/index.js" defer></script>
+	<script src="./js/login.js" defer></script>
+	<link rel="sortcut icon" href="./img/logoMiva.png" type="image/x-icon" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+	<title>Login</title>
+</head>
+
+<body>
+	<section class="container">
+		<div class="login-container">
+			<div class="login-circle">
+				<img src="./img/icons/usuario-outline.svg" alt="Ícone de Login">
+			</div>
+
+			<form id="loginForm" onsubmit="login(event)">
+				<div class="input-container">
+					<label class="label-icon" for="usuario">
+						<img src="./img/icons/usuario.svg" alt="Ícone Usuário">
+					</label>
+					<input id="usuario" placeholder="Usuário" class="input" type="text">
+				</div>
+
+				<div class="input-container">
+					<label class="label-icon" for="senha">
+						<img src="./img/icons/senha.svg" alt="Ícone Cadeado">
+					</label>
+					<div class="input-eye-wrapper">
+						<input id="senha" placeholder="Senha" class="input" type="password">
+						<input class="eye" type="checkbox" checked onclick="alternarVisibilidade(event)">
+					</div>
+				</div>
+
+				<div class="opcoes-container">
+					<div class="checkbox-container">
+						<input id="manter-conectado" name="manter-conectado" class="css-checkbox" type="checkbox" checked>
+						<label for="manter-conectado">Manter conectado</label>
+					</div>
+
+					<a href="#" class="esqueceu-senha">Esqueceu a senha?</a>
+				</div>
+
+				<button class="btn-login" type="submit">Login</button>
+			</form>
+		</div>
+	</section>
+</body>
+
+</html>

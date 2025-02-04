@@ -1,58 +1,221 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="./css/styles.css">
-	<link rel="stylesheet" href="./css/login.css">
+	<link rel="stylesheet" href="./css/envelope.css">
 	<script src="./js/index.js" defer></script>
-	<script src="./js/login.js" defer></script>
+	<script src="./js/telefone.js" defer></script>
+	<script src="./js/data.js" defer></script>
+	<script src="./js/calculo-tributos.js" defer></script>
 	<link rel="sortcut icon" href="./img/logoMiva.png" type="image/x-icon" />
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-	<title>Login</title>
+	<link href="https://fonts.cdnfonts.com/css/century-gothic-paneuropean" rel="stylesheet">
+	<title>Envelope de Tributo</title>
 </head>
 
 <body>
-	<section class="container">
-		<div class="login-container">
-			<div class="login-circle">
-				<img src="./img/icons/usuario-outline.svg" alt="Ícone de Login">
+	<div class="container">
+		<div class="container-externo">
+			<div class="container-interno">
+				<header class="container-header">
+					<img class="logo" src="./img/logoMivaNome.png" alt="Logo do Miva - Ministério Internacional Vida Abundante" />
+					<div class="container-data-remuneracao">
+						<div class="container-data">
+							<label for="data" class="label">Data</label>
+							<input id="data" name="data" class="input-azul-escuro" placeholder="dd/mm/yyyy" type="text" oninput="atualizarData(event)" onkeydown="limparData(event)">
+						</div>
+						<div class="container-remuneracao">
+							<label for="remuneracao" class="label">Remuneração Mensal</label>
+							<div class="input-eye-wrapper">
+								<input id="remuneracao" name="remuneracao" class="input-remuneracao" type="text" oninput="calcula(event)" />
+								<input class="eye" type="checkbox" onclick="alternarVisibilidade(event)">
+							</div>
+						</div>
+					</div>
+				</header>
+				<div class="container-dados">
+					<div class="container-nome">
+						<label for="nome" class="label">Nome:</label>
+						<input id="nome" class="input-azul-escuro" placeholder="Nome completo" type="text">
+					</div>
+					<div class="container-tel">
+						<label for="telefone">Telefone:</label>
+						<input name="telefone" id="telefone" class="input-azul-escuro" type="tel" placeholder="Ex.: (61) 91234-1234" oninput="atualizaTelefone(event)">
+					</div>
+					<div class="container-motivo-oracao">
+						<label for="motivo-oracao" class="label">Oração:</label>
+						<input id="motivo-oracao" class="input-azul-escuro" type="text" placeholder="Motivo de oração...">
+					</div>
+				</div>
+				<div class="container-data-remuneracao mobile">
+					<div class="container-data">
+						<label for="data-mobile" class="label">Data</label>
+						<input id="data-mobile" name="data" class="input-azul-escuro" placeholder="dd/mm/yyyy" type="text" oninput="atualizarData(event)" onkeydown="limparData(event)">
+					</div>
+					<div class="container-remuneracao">
+						<label for="remuneracao-mobile" class="label">Remuneração Mensal</label>
+						<div class="input-eye-wrapper">
+							<input id="remuneracao-mobile" name="remuneracao" class="input-remuneracao" type="text" oninput="calcula(event)">
+							<input class="eye" type="checkbox" onclick="alternarVisibilidade(event)">
+						</div>
+					</div>
+				</div>
+				<div class="container-tributos">
+					<div class="caixa-tributos">
+						<div>
+							<h4 class="title">Primícia (1/30):</h4>
+							<div>
+								<small>Lv 23.10<span> / </span>Ez 44.30<span> / </span>Ne 10.37<span> / </span>Nm
+									18.12-19<span> / </span>Dt 18.1-4</small>
+							</div>
+							<div>
+								<small>Dt 26.1-4<span> / </span>2 Cr 31.4-11<span> / </span>Pv 3.9-10<span> / </span>Rm
+									11.16<span> / </span>Hb 11.14</small>
+							</div>
+						</div>
+						<div class="container-input-tributos">
+							<input id="primicia" name="primicia" class="icon" type="text" oninput="calcula(event, true)">
+						</div>
+					</div>
+					<div class="caixa-tributos">
+						<div>
+							<h4 class="title">Dízimo (10%):</h4>
+							<div>
+								<small>Lv 27.32-34<span> / </span>Dt 26.12-15<span> / </span>Ne 10.37<span> /
+									</span>2
+									Cr 31.4-12</small>
+							</div>
+							<div>
+								<small>Ml 3.6-10<span> / </span> Mt 23.23-24<span> / </span>Hb 7.1-10<span> /
+									</span>Sl 96.7-9</small>
+							</div>
+						</div>
+						<div class="container-input-tributos">
+							<input id="dizimo" name="dizimo" class="tributos-velue icon" type="text" oninput="calcula(event, true)">
+						</div>
+					</div>
+					<div class="caixa-tributos">
+						<div>
+							<h4 class="title">Oferta ao Min. de Socorro (2%):</h4>
+							<div>
+								<small>Gl 6.8<span> / </span>Tg 1.7-8<span> / </span>1 Re 17.8-16<span> / </span> Mc
+									4.26-29</small>
+							</div>
+							<div>
+								<small>2 Co 9.6-10<span> / </span>Mc 4.1-20<span> / </span>2 Cr 9.6-11
+								</small>
+							</div>
+						</div>
+						<div class="container-input-tributos">
+							<input id="oferta_minis_socorro" name="oferta_minis_socorro" class="tributos-velue icon" type="text" oninput="calcula(event, true)">
+						</div>
+					</div>
+					<div class="caixa-tributos">
+						<div>
+							<h4 class="title">Oferta de Gratidão <small>(Voluntária com Proposíto)</small>:</h4>
+							<div>
+								<small>Ex 25.2-3 <span> / </span> Ex 34.20<span>/</span> Ex 23.15<span>/</span> Jz
+									6.15-18</small>
+							</div>
+							<div>
+								<small>1 Cr 21.21-26<span> / </span> 2 Cr 9.7<span>/</span> Lc 2.21-24<span>/</span>
+									Rm
+									13.1-7 </small>
+							</div>
+						</div>
+						<div class="container-input-tributos">
+							<input id="oferta_gratidao" name="oferta_gratidao" class="tributos-velue icon" type="text" oninput="calcula(event, true)">
+						</div>
+					</div>
+					<div class="caixa-tributos">
+						<div>
+							<h4 class="title">Semeadura:</h4>
+							<div>
+								<small>Ex 23.14-17<span> / </span>1 Re 17.8-24<span> / </span>2 Re 8.1-7<span> /
+									</span>Lc 8.1-3</small>
+							</div>
+							<div>
+								<small>Mt 21.33-46<span> / </span>Fp 4.10-19<span> / </span>2 Re 4.1-7</small>
+							</div>
+						</div>
+						<div class="container-input-tributos">
+							<input id="semeadura" name="semeadura" class="tributos-velue icon" type="text" oninput="calcula(event, true)">
+						</div>
+					</div>
+					<div class="caixa-tributos">
+						<div>
+							<h4 class="title">Oferta para Israel:</h4>
+							<div>
+								<small>Jo 4.22-23<span> / </span>Hb 11.8-10<span> / </span>Sl 102.13-22<span> /
+									</span>Is 60.10-11</small>
+							</div>
+							<div>
+								<small>Zc 14.16-20 <span>/</span> Rn 15.27 <span>/</span> 2 Co 9.10</small>
+							</div>
+						</div>
+						<div class="container-input-tributos">
+							<input id="oferta_israel" name="oferta_israel" class="tributos-velue icon" type="text" oninput="calcula(event, true)">
+						</div>
+					</div>
+				</div>
+				<footer class="container-footer">
+					<div class="container-acoes">
+						<div class="acoes">
+							<button class="botao-imprimir" onclick="imprimirEnvelope()">
+								<img src="./img/icons/impressora.png" alt="Ícone Impressora" />
+								Imprimir
+							</button>
+							<div class="pix">
+								<img src="./img/pix.png" alt="QRCode Pix">
+							</div>
+						</div>
+						<div class="cnpj-container">
+							<p><strong>CPNJ</strong>: <span id="cpnj">43.694.778/0001-50</span></p>
+							<button title="copiar cnpj" class="botao-copiar" onclick="copiarCnpj()">
+								<img src="./img/icons/copy.svg" alt="Copiar" />
+							</button>
+						</div>
+					</div>
+					<div class="logo-baixo">
+						<img src="./img/logoMiva.png" alt="Logo do Miva" />
+					</div>
+					<div class="container-total">
+						<label for="total-contribuicao">Total da Contribuição</label>
+						<input id="total-contribuicao" name="total-contribuicao" class="icon" type="text" disabled>
+					</div>
+				</footer>
+				<footer class="container-footer mobile">
+					<div class="logo-footer">
+						<div class="cnpj-container">
+							<p><strong>CPNJ</strong>: <span id="cpnj">43.694.778/0001-50</span></p>
+							<button title="copiar cnpj" class="botao-copiar" onclick="copiarCnpj()">
+								<img src="./img/icons/copy.svg" alt="Copiar" />
+							</button>
+						</div>
+						<img src="./img/logoMiva.png" alt="Logo do Miva" />
+					</div>
+					<div class="container-acoes">
+						<div class="container-total">
+							<label for="total-contribuicao-mobile">Total da Contribuição</label>
+							<input id="total-contribuicao-mobile" name="total-contribuicao" class="icon" type="text" disabled>
+						</div>
+						<div class="acoes">
+							<button class="botao-imprimir" onclick="imprimirEnvelope()">
+								<img src="./img/icons/impressora.png" alt="Ícone Impressora" />
+								Imprimir
+							</button>
+							<div class="pix">
+								<img src="./img/pix.png" alt="QRCode Pix">
+							</div>
+						</div>
+					</div>
+				</footer>
 			</div>
-
-			<form id="loginForm" onsubmit="login(event)">
-				<div class="input-container">
-					<label class="label-icon" for="usuario">
-						<img src="./img/icons/usuario.svg" alt="Ícone Usuário">
-					</label>
-					<input id="usuario" placeholder="Usuário" class="input" type="text">
-				</div>
-
-				<div class="input-container">
-					<label class="label-icon" for="senha">
-						<img src="./img/icons/senha.svg" alt="Ícone Cadeado">
-					</label>
-					<div class="input-eye-wrapper">
-						<input id="senha" placeholder="Senha" class="input" type="password">
-						<input class="eye" type="checkbox" checked onclick="alternarVisibilidade(event)">
-					</div>
-				</div>
-
-				<div class="opcoes-container">
-					<div class="checkbox-container">
-						<input id="manter-conectado" name="manter-conectado" class="css-checkbox" type="checkbox" checked>
-						<label for="manter-conectado">Manter conectado</label>
-					</div>
-
-					<a href="#" class="esqueceu-senha">Esqueceu a senha?</a>
-				</div>
-
-				<button class="btn-login" type="submit">Login</button>
-			</form>
 		</div>
-	</section>
+	</div>
 </body>
 
 </html>
